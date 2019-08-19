@@ -1,1 +1,72 @@
 /**index.wxss**/
+.container{
+  margin-top: 100rpx;
+}
+/* 头部搜索框 */
+.search{
+  background-color: #ff2d4a;
+  padding: 20rpx;
+  position: fixed;
+  width: 720rpx;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.topInput{
+  display: flex;
+  height: 60rpx;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #666;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+}
+.topInput icon{
+  margin-right: 4px;
+}
+/* 轮播图 */
+.slide-image{
+  width: 750rpx;
+  height: 340rpx;
+}
+
+/* 导航 */
+.navs{
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navs image{
+  width: 128rpx;
+  height: 140rpx;
+}
+
+/* 楼层 */
+.floor{
+  margin-top: 20rpx;
+}
+.floor-title image{
+  margin-top:10rpx;
+  width: 750rpx;
+  height: 60rpx;
+}
+.floor-cont{
+  padding: 20rpx 16rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+.floor-left image{
+  width: 232rpx;
+  height: 386rpx;
+}
+.floor-right{
+  display: flex;
+  flex-wrap: wrap;
+}
+.floor-right image{
+  width: 223rpx;
+  height: 188rpx;
+  margin-left: 20rpx;
+}

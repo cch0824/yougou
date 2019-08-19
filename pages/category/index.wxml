@@ -1,0 +1,30 @@
+<!--pages/category/index.wxml-->
+<view class="container">
+  <!-- 搜索栏 -->
+  <search/>
+  
+  <!-- 分类内容 -->
+  <view class="catgry">
+    <!-- 左侧导航 -->
+    <view class="navs">
+      <view class="nav-item {{current==index?'active':''}}" wx:for="{{categorList}}" wx:key="{{index}}" bindtap="changeTab" data-index="{{index}}">{{item.cat_name}}</view>
+    </view>
+    <!-- 右侧内容 -->
+    <view class="cont-right">
+      <view class="cont" wx:for="{{categorList[current].children}}" wx:key="{{index}}">
+        <view class="cate-title">
+          <text>/</text>{{item.cat_name}}
+          <text>/</text>
+        </view>
+        <view class="cate-list">
+          <!-- 分类内容 -->
+          <navigator url="/pages/searchlist/index?id={{item.cat_id}}&keyword={{item.cat_name}}" class="cate-item" wx:for="{{item.children}}" wx:key="{{index}}">
+            <image src="{{item.cat_icon}}">
+            </image>
+            <view>{{item.cat_name}}</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

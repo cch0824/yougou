@@ -1,0 +1,22 @@
+<!--pages/goodsDetail/index.wxml-->
+<!-- 轮播图 -->
+<view class="img">
+  <swiper indicator-dots indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 商品信息 -->
+<view>
+  <view class="pric">￥279</view>
+  <view class="text">spike 经典武士大马士革直刀(微型) 户外野营直刀 收藏礼品刀 饰品刀具</view>
+  <view class="collect">
+    <view class="iconfont iconshoucang1"></view>
+    收藏
+  </view>
+  <view class="express">快递：免运费</view>
+</view>

@@ -1,0 +1,115 @@
+/* pages/category/index.wxss */
+.container{
+  margin-top: 100rpx;
+   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+/* 头部搜索框 */
+.search{
+  background-color: #ff2d4a;
+  padding: 20rpx;
+  position: fixed;
+  width: 720rpx;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.topInput{
+  display: flex;
+  height: 60rpx;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #666;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+}
+.topInput icon{
+  margin-right: 4px;
+}
+
+/* 分类内容 */
+.catgry{
+  position: relative;
+  height: 100%;
+}
+/* 左侧导航 */
+.navs{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 200rpx;
+  height: 100%;
+  overflow: auto;
+}
+.nav-item{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+/* 导航高亮 */
+.active{
+  background-color: #fff;
+  color: #ff2d4a;
+  position: relative;
+}
+.active::before{
+  display: block;
+  content: "";
+  height: 80rpx;
+  width: 4px;
+  background-color: #ff2d4a;
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+}
+/* 右边标题 */
+.cont-right{
+  padding: 20rpx;
+  position: absolute;
+  left: 200rpx;
+  right: 0;
+  height:100%;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+.cont{
+  margin-top: 20rpx;
+}
+.cate-title{
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.cate-title text{
+  color: #ccc;
+  font-size: 14px;
+  margin: 0 10rpx;
+}
+/* 右边列表 */
+.cate-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.cate-item{
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20rpx;
+}
+.cate-item view{
+  text-overflow: ellipsis;
+}
+.cate-item image{
+  width: 120rpx;
+  height: 120rpx;
+}
