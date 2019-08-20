@@ -55,6 +55,7 @@ page {
 .content {
   background-color: #fff;
   margin-top: 15rpx;
+  margin-bottom: 100rpx;
 }
 
 .content .title {
@@ -152,8 +153,8 @@ page {
 /* 底部 */
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 0rpx;
   left: 0;
   right: 0;
   height: 100rpx;
@@ -171,10 +172,6 @@ page {
 .footer .checkedAll {
   display: block;
   margin: 0 30rpx;
-}
-
-.footer-totel {
-  margin-left: 120rpx;
 }
 
 .footer-pric {

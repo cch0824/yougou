@@ -10,18 +10,19 @@ Page({
       userName: '', //用户名
       telNumber: '', //手机号
       detailInfo: '' //地址
-    }
+    },
+    goods: {}, // 本地存储的购物车商品数据
+    allPrice:0  // 合计购物车价格
   },
- // 设置收货地址 
+  // 设置收货地址 
   changeAddress() {
     wx.chooseAddress({
       success: res => {
-        // console.log(res)
         this.setData({
-          userInfo:{
-            userName: res.userName, 
+          userInfo: {
+            userName: res.userName,
             telNumber: res.telNumber,
-            detailInfo: res.provinceName + res.cityName + res.countyName+res.detailInfo
+            detailInfo: res.provinceName + res.cityName + res.countyName + res.detailInfo
           }
         })
       }
@@ -32,20 +33,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.setData({
+      goods:wx.getStorageSync("goods")
+    })
+    let allPrice=0;
+    Object.keys(this.data.goods).forEach(v=>{
+      allPrice+= this.data.goods[v].goods_price
+    })
+    this.setData({
+      allPrice
+    })
   },
 
   /**

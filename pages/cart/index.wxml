@@ -7,7 +7,7 @@
       <view class="name">收货人： {{userInfo.userName}}</view>
       <view class="phone">{{userInfo.telNumber}}</view>
     </view>
-    <view class="address">收货地址：{{userInfo.detailInfo}}"</view>
+    <view class="address">收货地址：{{userInfo.detailInfo}}</view>
   </view>
   <view class="userInfo" wx:else>请添加收货地址</view>
   <image src="../../images/cart_border@2x.png"></image>
@@ -20,19 +20,19 @@
   </view>
   <!-- 购物车商品列表信息 -->
   <view class="cartList">
-    <view class="cartItem">
+    <view class="cartItem" wx:for="{{goods}}" wx:key="{{index}}">
       <!-- 商品选择状态 -->
       <icon class="checked" color="red" type="success" size="16" />
       <view class="itemInfo">
-        <image src="http://image1.suning.cn/uimg/b2c/newcatentries/0070134290-000000000149003877_1_400x400.jpg" mode="aspectFill"></image>
+        <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>
         <view class="infoRight">
-          <view class="goodsText">创维（Skyworth）42X6 42英寸10核智能酷开网络平板液晶电视（黑色）
+          <view class="goodsText">{{item.goods_name}}
           </view>
           <view class="infoRight-btm">
-            <view class="goodsprice">￥300</view>
+            <view class="goodsprice">￥{{item.goods_price}}</view>
             <view class="goodsnum">
               <view class="numedit">-</view>
-              <text>3</text>
+              <text>1</text>
               <view class="numedit">+</view>
             </view>
           </view>
@@ -50,9 +50,9 @@
   <view class="footer-totel">
     <view class="footer-pric">
       合计：
-      <text>￥222</text>
+      <text>￥{{allPrice}}</text>
     </view>
     <view class="yunfei">包含运费</view>
   </view>
-  <view class="toPay">结算(3)</view>
+  <view class="toPay">结算</view>
 </view>

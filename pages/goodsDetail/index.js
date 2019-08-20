@@ -1,10 +1,21 @@
 // pages/goodsDetail/index.js
-
 import request from "../../utils/request.js"
+
 Page({
-  // 添加进购物车
+  // 加入购物车
   handleAddGoods(){
-    // wx.setStorageSync("goods", goods)
+    // 获取本地存储的购物车数据
+    let goods=wx.getStorageSync("goods")||{}
+    let {goods_id} = this.data.goodsData
+    // goods对象中以goods_id为key，值为商品信息
+    goods[goods_id] = this.data.goodsData
+    // 设置本地购物车商品数据
+    wx.setStorageSync("goods",goods)
+    wx.showToast({
+      title: '加入购物车成功',
+      icon: 'success',
+      duration: 2000
+    })
   },
 
   /**
@@ -14,7 +25,6 @@ Page({
     imgUrls: [],
     richText:"",
     goodsData:{},  //当前商品的数据
-    goods:{}  // 本地存储的购物车商品数据
   },
 
   /**
