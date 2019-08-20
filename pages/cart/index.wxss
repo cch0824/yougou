@@ -1,1 +1,202 @@
 /* pages/cart/index.wxss */
+
+/* 头部用户信息 */
+
+page {
+  background-color: #f5f5f5;
+}
+
+.header {
+  background: #fff;
+  font-size: 14px;
+}
+
+.header .user {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .phone {
+  margin-right: 60rpx;
+}
+
+.userInfo {
+  padding: 20rpx;
+}
+
+.address {
+  padding-left: 20rpx;
+  padding-bottom: 20rpx;
+  position: relative;
+}
+
+.userInfo::after {
+  position: absolute;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  height: 16rpx;
+  width: 16rpx;
+  display: block;
+  content: '';
+  transform: rotate(45deg);
+  font-size: 14px;
+  right: 35rpx;
+  top: 42rpx;
+}
+
+.header image {
+  display: block;
+  height: 5px;
+}
+
+/* 购物车列表 */
+
+.content {
+  background-color: #fff;
+  margin-top: 15rpx;
+}
+
+.content .title {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  height: 60rpx;
+  padding: 20rpx 30rpx;
+  line-height: 60rpx;
+}
+
+.icondianpu {
+  color: #999;
+  margin-right: 20rpx;
+}
+
+/* 列表详情 */
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  height: 200rpx;
+}
+
+.cartItem .checked {
+  display: block;
+  height: 100%;
+  line-height: 200rpx;
+  width: 50rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+.cartItem image {
+  display: block;
+  height: 150rpx;
+  width: 150rpx;
+  margin: 20rpx 0;
+  flex-shrink: 0;
+}
+
+.itemInfo {
+  flex: 1;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  height: 100%;
+}
+
+.infoRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  padding: 15rpx;
+  margin-right: 20rpx;
+}
+
+.cartList .goodsText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+}
+
+.infoRight-btm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.goodsnum {
+  display: flex;
+  align-items: center;
+}
+
+.goodsprice {
+  color: red;
+  font-size: 18px;
+}
+
+.goodsnum text {
+  display: block;
+  margin: 0 20rpx;
+  font-size: 13px;
+}
+
+.numedit {
+  height: 40rpx;
+  width: 50rpx;
+  text-align: center;
+  line-height: 40rpx;
+  border: 1px solid #666;
+}
+
+/* 底部 */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ischecked {
+  display: flex;
+}
+
+.footer .checkedAll {
+  display: block;
+  margin: 0 30rpx;
+}
+
+.footer-totel {
+  margin-left: 120rpx;
+}
+
+.footer-pric {
+  font-size: 14px;
+}
+
+.footer-pric text {
+  font-size: 18px;
+  color: #ff2d4a;
+}
+
+.yunfei {
+  color: #999;
+  font-size: 12px;
+}
+
+.toPay {
+  height: 100%;
+  width: 200rpx;
+  background-color: #ff2d4a;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 14px;
+}

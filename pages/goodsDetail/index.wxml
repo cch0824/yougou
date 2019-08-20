@@ -1,22 +1,41 @@
 <!--pages/goodsDetail/index.wxml-->
 <!-- 轮播图 -->
 <view class="img">
-  <swiper indicator-dots indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff">
+  <swiper indicator-dots indicator-color="rgba(0,0,0,.3)" indicator-active-color="#000">
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" />
+        <image src="{{item.pics_mid_url}}" class="slide-image" mode="aspectFill" />
       </swiper-item>
     </block>
   </swiper>
 </view>
 
 <!-- 商品信息 -->
-<view>
-  <view class="pric">￥279</view>
-  <view class="text">spike 经典武士大马士革直刀(微型) 户外野营直刀 收藏礼品刀 饰品刀具</view>
-  <view class="collect">
-    <view class="iconfont iconshoucang1"></view>
-    收藏
+<view class="info">
+  <view class="pric">￥{{goodsData.goods_price}}</view>
+  <view class="title">
+    <view class="text">{{goodsData.goods_name}}</view>
+    <view class="collect">
+      <view class="iconfont iconshoucang1"></view>
+      收藏
+    </view>
   </view>
   <view class="express">快递：免运费</view>
+</view>
+<!-- 富文本内容 -->
+<rich-text nodes="{{richText}}"></rich-text>
+
+<!-- 底部 -->
+<view class="footer">
+<button class="kefu-btn" open-type="contact">联系客服</button>
+  <view class="kefu">
+    <view class="iconfont iconkefu"></view>
+    <view class="kefutext">联系客服</view>
+  </view>
+  <navigator url="/pages/cart/index" open-type="switchTab" class="cart">
+    <view class="iconfont icongouwuche"></view>
+    <view class="cartText">购物车</view>
+  </navigator>
+  <view class="addCart" bindtap="handleAddGoods">加入购物车</view>
+  <view class="nowPay">立即购买</view>
 </view>

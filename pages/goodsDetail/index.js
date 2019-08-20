@@ -1,22 +1,40 @@
 // pages/goodsDetail/index.js
+
+import request from "../../utils/request.js"
 Page({
+  // 添加进购物车
+  handleAddGoods(){
+    // wx.setStorageSync("goods", goods)
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
+    imgUrls: [],
+    richText:"",
+    goodsData:{},  //当前商品的数据
+    goods:{}  // 本地存储的购物车商品数据
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 请求商品详细数据
+    request({
+      url:'/goods/detail',
+      data:{
+        goods_id:options.goods_id
+      }
+    }).then(res=>{
+      let {message}=res.data
+      this.setData({
+        goodsData:message,
+        imgUrls: message.pics,
+        richText: message.goods_introduce
+      })
+    })
   },
 
   /**

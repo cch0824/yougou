@@ -13,7 +13,7 @@
 <!-- 商品列表 -->
 <view class="goodsList">
   <!-- 单个商品 -->
-  <view class="gooditem" wx:for="{{goods}}" wx:key="{{index}}">
+  <navigator url="/pages/goodsDetail/index?goods_id={{item.goods_id}}" class="gooditem" wx:for="{{goods}}" wx:key="{{index}}">
     <view class="goodImg">
       <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
     </view>
@@ -23,7 +23,7 @@
         ￥<text>{{item.goods_price}}</text>
       </view>
     </view>
-  </view>
+  </navigator>
 </view>
 <!-- 下拉触底时触发 -->
 <view class="loadmore">{{ismore?'加载更多':'没有数据了'}}</view>

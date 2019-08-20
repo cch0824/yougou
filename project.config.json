@@ -46,7 +46,7 @@
 					"id": 0,
 					"name": "pages/goodsDetail/index",
 					"pathName": "pages/goodsDetail/index",
-					"query": "",
+					"query": "goods_id=43982",
 					"scene": null
 				}
 			]
