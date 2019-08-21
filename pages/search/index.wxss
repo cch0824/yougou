@@ -1,1 +1,56 @@
-/* pages/search/index.wxss */
+/* 头部搜索 */
+
+.search {
+  background-color: #efefef;
+  height: 60rpx;
+  display: flex;
+  padding: 20rpx;
+  justify-content: space-between;
+}
+
+.searchInput {
+  display: flex;
+  background-color: #fff;
+  flex: 1;
+  align-items: center;
+}
+
+.searchInput icon {
+  display: block;
+  margin: 20rpx;
+}
+
+.searchDel {
+  width: 155rpx;
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin-left: 20rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+/* 历史搜索 */
+
+.history {
+  padding: 20rpx;
+}
+
+.history .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 历史记录 */
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.historyItem {
+  background-color: #dedede;
+  padding: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  }

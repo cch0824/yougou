@@ -1,2 +1,29 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<!-- 头部搜索 -->
+<view class="search">
+  <view class="searchInput">
+    <icon type="search" size="18"/>
+    <input placeholder="请输入你想要的商品" auto-focus/>
+  </view>
+  <view wx:if="{{true}}" class="searchDel">取消</view>
+</view>
+
+<!-- 历史搜索 -->
+<view class="history">
+  <!-- 标题部分 -->
+  <view class="title">
+    <text>历史搜索</text>
+    <icon type="clear" size="16"/>
+  </view>
+  <!-- 历史记录 -->
+  <view class="content">
+    <view class="historyItem">小米</view>
+    <view class="historyItem">华为手机</view>
+    <view class="historyItem">小米米</view>
+    <view class="historyItem">小米</view>
+    <view class="historyItem">小米</view>
+    <view class="historyItem">小米</view>
+    <view class="historyItem">小米米</view>
+    <view class="historyItem">华为手机</view>
+  </view>
+</view>
+
