@@ -22,7 +22,10 @@
   <view class="cartList">
     <view class="cartItem" wx:for="{{goods}}" wx:key="{{index}}">
       <!-- 商品选择状态 -->
-      <icon class="checked" color="red" type="success" size="16" />
+      <icon class="checked" 
+      color="{{item.ischecked?'red':'gray'}}" 
+      type="success" size="16" 
+      bindtap="changeChecked" data-id="{{item.goods_id}}"/>
       <view class="itemInfo">
         <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>
         <view class="infoRight">
@@ -31,9 +34,9 @@
           <view class="infoRight-btm">
             <view class="goodsprice">￥{{item.goods_price}}</view>
             <view class="goodsnum">
-              <view class="numedit">-</view>
-              <text>1</text>
-              <view class="numedit">+</view>
+              <view class="numedit" bindtap="reduceGoodsNumber" data-id="{{item.goods_id}}">-</view>
+              <text>{{item.number}}</text>
+              <view class="numedit" bindtap="addGoodsNumber" data-id="{{item.goods_id}}">+</view>
             </view>
           </view>
         </view>
@@ -45,7 +48,8 @@
 <!--  底部结算 -->
 <view class="footer">
   <view class="ischecked">
-    <icon class="checkedAll" color="red" type="success" size="16" /> 全选
+    <icon class="checkedAll" bindtap="changeAllChecked"
+    color="{{allChecked?'red':'gray'}}" type="success" size="16" /> 全选
   </view>
   <view class="footer-totel">
     <view class="footer-pric">

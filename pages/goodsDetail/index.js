@@ -11,6 +11,7 @@ Page({
     goods[goods_id] = this.data.goodsData
     // 设置本地购物车商品数据
     wx.setStorageSync("goods",goods)
+    // 提示加入购物车成功
     wx.showToast({
       title: '加入购物车成功',
       icon: 'success',
@@ -25,6 +26,8 @@ Page({
     imgUrls: [],
     richText:"",
     goodsData:{},  //当前商品的数据
+    ischecked:true,  //商品选中
+    number:1   //商品数量
   },
 
   /**
@@ -39,6 +42,8 @@ Page({
       }
     }).then(res=>{
       let {message}=res.data
+      message.ischecked = this.data.ischecked
+      message.number=this.data.number
       this.setData({
         goodsData:message,
         imgUrls: message.pics,

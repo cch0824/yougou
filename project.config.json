@@ -46,7 +46,7 @@
 					"id": 0,
 					"name": "pages/cart/index",
 					"pathName": "pages/cart/index",
-					"query": "goods_id=43985",
+					"query": "",
 					"scene": null
 				}
 			]
